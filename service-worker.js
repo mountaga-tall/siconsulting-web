@@ -1,4 +1,4 @@
-const CACHE_NAME = 'si-consulting-shell-v1';
+const CACHE_NAME = 'si-consulting-shell-v2';
 const APP_ROOT = new URL('./', self.registration.scope);
 const APP_FILES = [
   './',
@@ -12,6 +12,8 @@ const APP_FILES = [
   './translations.js',
   './manifest.webmanifest',
   './icon.svg',
+  './icon-192.svg',
+  './icon-512.svg',
   './offline.html',
   './logo.jpg'
 ].map((path) => new URL(path, APP_ROOT).toString());

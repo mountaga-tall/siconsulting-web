@@ -16,6 +16,8 @@ const assets = [
   'manifest.webmanifest',
   'service-worker.js',
   'icon.svg',
+  'icon-192.svg',
+  'icon-512.svg',
   'offline.html',
   'logo.jpg'
 ];
@@ -44,6 +46,8 @@ for (const [page, html] of htmlByPage) {
   assert.match(html, /<\/body>\s*<\/html>\s*$/i, `${page} is not properly closed.`);
   assert.ok(html.includes('id="main-content"'), `${page} is missing its main landmark.`);
   assert.ok(html.includes('href="manifest.webmanifest"'), `${page} is missing the PWA manifest.`);
+  assert.ok(html.includes('href="icon-192.svg"'), `${page} is missing the app touch icon.`);
+  assert.ok(html.includes('src="icon-192.svg"'), `${page} is missing the square SI Consulting brand mark.`);
   assert.ok(html.includes('src="translations.js"'), `${page} is missing the translation layer.`);
   assert.ok(html.includes('src="script.js"'), `${page} is missing the main script.`);
   assert.ok(html.includes('data-lang="fr"') && html.includes('data-lang="en"') && html.includes('data-lang="de"'), `${page} must expose all three language controls.`);
@@ -81,9 +85,14 @@ for (const [page, html] of htmlByPage) {
 const manifest = JSON.parse(readFileSync('manifest.webmanifest', 'utf8'));
 assert.equal(manifest.display, 'standalone', 'PWA display mode must be standalone.');
 assert.equal(manifest.scope, './', 'PWA scope must be relative to the GitHub Pages project.');
-assert.ok(manifest.icons.some((icon) => icon.src === './icon.svg'), 'PWA icon is missing from the manifest.');
+assert.ok(manifest.icons.some((icon) => icon.src === './icon.svg'), 'PWA fallback icon is missing from the manifest.');
+assert.ok(manifest.icons.some((icon) => icon.src === './icon-192.svg' && icon.sizes === '192x192'), '192px PWA icon is missing from the manifest.');
+assert.ok(manifest.icons.some((icon) => icon.src === './icon-512.svg' && icon.sizes === '512x512'), '512px PWA icon is missing from the manifest.');
 assert.ok(pages.every((page) => serviceWorker.includes("'./" + page + "'")), 'Service worker must precache all multipage routes.');
 assert.ok(serviceWorker.includes('./offline.html'), 'Service worker must include an offline fallback.');
+assert.ok(serviceWorker.includes('./icon-192.svg') && serviceWorker.includes('./icon-512.svg'), 'Service worker must precache both app icon sizes.');
+assert.match(css, /\.hero-logo-frame img\{[^}]*object-fit:contain/, 'The animated hero logo must preserve its complete aspect ratio.');
+assert.match(css, /\.brand-mark\{width:70px;height:70px/, 'The header brand mark must be displayed at the larger size.');
 assert.ok(script.includes("register('./service-worker.js', {scope:'./'})"), 'Service worker must use a GitHub Pages-safe relative scope.');
 assert.ok(script.includes("localStorage"), 'Language and theme preferences should persist locally.');
 assert.ok(script.includes("data-lang"), 'Language switching support is missing.');
