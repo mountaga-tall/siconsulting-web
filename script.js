@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
-    // 4. Révélation fluide au scroll (Intersection Observer)
+    // 4. Révélation fluide au scroll
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('active');
             }
         });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
@@ -79,41 +79,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 7. Pré-remplissage intelligent du formulaire depuis les cartes
+    // 7. Onglets Fiches Techniques
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            btn.classList.add('active');
+            document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+        });
+    });
+
+    // 8. Pré-remplissage intelligent du formulaire depuis les cartes et onglets
     const productSelect = document.getElementById('productSelect');
+
     document.querySelectorAll('.select-product').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const card = e.target.closest('.product-card');
-            const productName = card.getAttribute('data-product');
-            productSelect.value = productName;
+            productSelect.value = card.getAttribute('data-product');
             document.getElementById('devis').scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // 8. Envoi de la demande de devis vers WhatsApp
-    // IMPORTANT : Remplacez le numéro ci-dessous par le numéro WhatsApp officiel de SI Consulting SARL (format international sans +)
-    const WHATSAPP_NUMBER = "2250700000000"; 
+    document.querySelectorAll('.select-product-direct').forEach(btn => {
+        btn.addEventListener('click', () => {
+            productSelect.value = btn.getAttribute('data-product');
+            document.getElementById('devis').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // 9. Envoi de la demande de devis via WhatsApp ou Email
+    function getFormData() {
+        return {
+            whatsappNumber: document.getElementById('whatsappLine').value,
+            name: document.getElementById('name').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            country: document.getElementById('country').value.trim(),
+            product: productSelect.value,
+            message: document.getElementById('message').value.trim() || 'Demande de catalogue / tarifs'
+        };
+    }
 
     document.getElementById('quoteForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const country = document.getElementById('country').value.trim();
-        const product = productSelect.value;
-        const message = document.getElementById('message').value.trim();
+        const data = getFormData();
 
         const text = `*NOUVELLE DEMANDE DE DEVIS - SI CONSULTING*%0A` +
                      `-----------------------------------%0A` +
-                     `*Client :* ${encodeURIComponent(name)}%0A` +
-                     `*Téléphone :* ${encodeURIComponent(phone)}%0A` +
-                     `*Pays :* ${encodeURIComponent(country)}%0A` +
-                     `*Solution :* ${encodeURIComponent(product)}%0A` +
-                     `*Détails :* ${encodeURIComponent(message || 'Demande de catalogue / tarifs')}`;
+                     `*Client :* ${encodeURIComponent(data.name)}%0A` +
+                     `*Téléphone :* ${encodeURIComponent(data.phone)}%0A` +
+                     `*Pays :* ${encodeURIComponent(data.country)}%0A` +
+                     `*Solution :* ${encodeURIComponent(data.product)}%0A` +
+                     `*Détails :* ${encodeURIComponent(data.message)}`;
 
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        window.open(`https://wa.me/${data.whatsappNumber}?text=${text}`, '_blank');
     });
 
-    // 9. Canvas Particules Dorées & Émeraudes (Rappel des braises du logo)
+    document.getElementById('emailSubmitBtn').addEventListener('click', () => {
+        const form = document.getElementById('quoteForm');
+        if (!form.reportValidity()) return;
+
+        const data = getFormData();
+        const subject = encodeURIComponent(`Demande de devis - ${data.product} (${data.name})`);
+        const body = encodeURIComponent(
+            `Bonjour SI Consulting SARL,\n\n` +
+            `Client / Société : ${data.name}\n` +
+            `Téléphone : ${data.phone}\n` +
+            `Pays : ${data.country}\n` +
+            `Solution recherchée : ${data.product}\n` +
+            `Détails : ${data.message}\n\n` +
+            `Cordialement.`
+        );
+
+        window.location.href = `mailto:info@siconsulting.com?subject=${subject}&body=${body}`;
+    });
+
+    // 10. Canvas Particules Dorées & Émeraudes
     const canvas = document.getElementById('particlesCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
