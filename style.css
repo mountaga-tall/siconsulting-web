@@ -1222,8 +1222,8 @@ body.js-enabled .reveal.active {
     .nav-links {
         position: absolute;
         top: calc(100% + 8px);
-        left: 24px;
-        right: 24px;
+        left: 12px;
+        right: 12px;
         z-index: 110;
         display: flex;
         align-items: stretch;
