@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="192" viewBox="0 0 512 512" role="img" aria-label="SI Consulting">
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 512 512" role="img" aria-label="SI Consulting">
   <title>SI Consulting</title>
-  <image href="./logo.jpg" xlink:href="./logo.jpg" x="-93.33" y="0" width="698.67" height="600" preserveAspectRatio="none"/>
+  <defs>
+    <linearGradient id="africa" x1="0" y1="0" x2="0.15" y2="1">
+      <stop offset="0" stop-color="#f04b32"/>
+      <stop offset="0.46" stop-color="#f59a37"/>
+      <stop offset="0.68" stop-color="#f3c36b"/>
+      <stop offset="1" stop-color="#45d7af"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd58a"/>
+      <stop offset="1" stop-color="#62f0ce"/>
+    </linearGradient>
+    <radialGradient id="background" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#14263b"/>
+      <stop offset="1" stop-color="#070d17"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="82" fill="url(#background)"/>
+  <path d="M164 49 C138 57 115 74 101 96 L87 127 L69 148 L82 173 L77 195 L96 216 L121 225 L146 218 L166 228 L181 247 L198 260 L207 283 L201 307 L211 330 L218 357 L231 391 L250 425 L272 451 L295 458 L318 440 L332 414 L346 384 L359 357 L368 329 L366 303 L383 279 L406 254 L431 222 L422 205 L399 219 L375 208 L357 184 L345 156 L320 141 L301 122 L282 100 L258 91 L240 100 L220 92 L205 75 L183 53 Z" fill="url(#africa)" stroke="url(#edge)" stroke-width="5" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M428 347 C439 332 451 334 456 349 C454 375 446 402 432 425 C421 434 412 422 414 405 C416 382 418 362 428 347 Z" fill="#49d9b3" stroke="#8affdc" stroke-width="4" filter="url(#glow)"/>
+  <text x="45" y="458" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="5" fill="#f5f0e7" stroke="#bdb39e" stroke-width="1">SI</text>
+  <g fill="#f9ae52" opacity=".9"><circle cx="45" cy="261" r="5"/><circle cx="72" cy="279" r="4"/><circle cx="108" cy="270" r="5"/><circle cx="143" cy="287" r="4"/><circle cx="465" cy="286" r="4"/></g>
 </svg>
