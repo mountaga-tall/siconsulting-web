@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: 22
       - name: Check JavaScript syntax
-        run: node --check script.js
+        run: |
+          node --check script.js
+          node --check translations.js
+          node --check service-worker.js
       - name: Validate website structure and interactions
         run: node scripts/validate-site.mjs
