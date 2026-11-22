@@ -1,97 +1,349 @@
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SI Consulting SARL | Solutions Minières, Charbon Actif & Traitement des Eaux</title>
-    <meta name="description" content="SI Consulting SARL : Fournisseur de référence en Afrique et à l'international pour le charbon actif minier, le traitement des eaux Hydrafin et les détecteurs de métaux haute précision.">
-    
-    <!-- Polices Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icônes Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Feuille de style -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070B11">
+  <meta name="description" content="SI Consulting SARL accompagne les acteurs miniers et industriels avec du charbon actif pour l’extraction aurifère, des solutions Hydrafin de traitement des eaux et des détecteurs de métaux professionnels.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SI Consulting SARL | Solutions minières et industrielles">
+  <meta property="og:description" content="Charbon actif minier, traitement des eaux Hydrafin et détection de métaux. Un accompagnement technique et logistique en Afrique et à l’international.">
+  <meta property="og:image" content="logo.jpg">
+  <title>SI Consulting SARL | Solutions minières, charbon actif et traitement des eaux</title>
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Halo lumineux suivant la souris -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-    <!-- Barre d'accès rapide haut de page -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-bar-links">
-                <a href="tel:+22377194647"><i data-lucide="phone"></i> ML : +223 77194647</a>
-                <a href="tel:+4917662176721"><i data-lucide="phone"></i> DE : +49 176 62176721</a>
-                <a href="mailto:info@siconsulting.com"><i data-lucide="mail"></i> info@siconsulting.com</a>
-            </div>
-            <div class="top-bar-badge">
-                <span class="pulse-dot"></span> Livraison Internationale & Afrique de l'Ouest
-            </div>
-        </div>
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-links" aria-label="Contacts directs">
+        <a href="tel:+22377194647"><i data-lucide="phone" aria-hidden="true"></i><span>Mali : +223 77 19 46 47</span></a>
+        <a href="tel:+4917662176721"><i data-lucide="phone" aria-hidden="true"></i><span>Allemagne : +49 176 62176721</span></a>
+        <a href="mailto:info@siconsulting.com"><i data-lucide="mail" aria-hidden="true"></i><span>info@siconsulting.com</span></a>
+      </div>
+      <div class="top-bar-badge"><span class="pulse-dot" aria-hidden="true"></span>Livraison internationale & Afrique de l’Ouest</div>
     </div>
+  </div>
 
-    <!-- Navigation Glassmorphism -->
-    <header class="navbar" id="navbar">
-        <div class="container nav-content">
-            <a href="#" class="brand">
-                <img src="logo.jpg" alt="SI Consulting SARL" class="brand-logo">
-                <div class="brand-text">
-                    <span class="brand-title">SI CONSULTING</span>
-                    <span class="brand-sub">SARL • AFRIQUE & EUROPE</span>
-                </div>
-            </a>
+  <header class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#accueil" class="brand" aria-label="SI Consulting SARL, accueil">
+        <img src="logo.jpg" alt="Logo SI Consulting SARL" class="brand-logo" width="46" height="46">
+        <span class="brand-text">
+          <span class="brand-title">SI CONSULTING</span>
+          <span class="brand-sub">SARL • AFRIQUE & EUROPE</span>
+        </span>
+      </a>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="#accueil">Accueil</a>
-                <a href="#solutions">Solutions</a>
-                <a href="#specifications">Fiches Techniques</a>
-                <a href="#expertise">Expertise</a>
-                <a href="#devis" class="btn-nav">Demander un devis</a>
-            </nav>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#specifications">Fiches techniques</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#devis" class="btn-nav">Demander un devis</a>
+      </nav>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                <i data-lucide="menu"></i>
-            </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="accueil" class="hero" aria-labelledby="hero-title">
+      <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="badge"><span class="pulse-dot" aria-hidden="true"></span>Performance industrielle & minière</div>
+          <h1 id="hero-title">L’excellence technologique au service de <span class="gradient-text">vos ressources</span></h1>
+          <p>De l’extraction aurifère au traitement des eaux potables et industrielles, SI Consulting SARL déploie des solutions haute performance : charbon actif, gamme Hydrafin et équipements de détection de métaux.</p>
+
+          <div class="hero-actions">
+            <a href="#solutions" class="btn btn-primary">Explorer nos solutions<i data-lucide="arrow-right" aria-hidden="true"></i></a>
+            <a href="#devis" class="btn btn-glass"><i data-lucide="message-square" aria-hidden="true"></i>Demander un devis</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Nos engagements">
+            <div class="stat-item">
+              <span class="stat-number" data-target="100">100</span><span class="stat-symbol">%</span>
+              <span class="stat-label">Engagement qualité</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="24">24</span><span class="stat-symbol">/7</span>
+              <span class="stat-label">Disponibilité commerciale</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="15">15</span><span class="stat-symbol">+</span>
+              <span class="stat-label">Pays ciblés par notre réseau</span>
+            </div>
+          </div>
+          <p class="hero-note">Parlons de vos contraintes de production, de vos volumes et de vos exigences techniques.</p>
         </div>
-    </header>
 
-    <!-- Section Hero -->
-    <section id="accueil" class="hero">
-        <canvas id="particlesCanvas"></canvas>
-        
-        <div class="container hero-grid">
-            <div class="hero-content reveal">
-                <div class="badge">
-                    <span class="pulse-dot"></span>
-                    Performance Industrielle & Minière
-                </div>
-                <h1>L'excellence technologique au service de <span class="gradient-text">vos ressources</span></h1>
-                <p>De l'extraction aurifère au traitement des eaux potables et industrielles, SI Consulting SARL déploie des solutions haute performance : charbon actif certifié, gamme Hydrafin et détection de métaux de pointe.</p>
-                
-                <div class="hero-actions">
-                    <a href="#solutions" class="btn btn-primary">
-                        Explorer nos solutions
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                    <a href="#devis" class="btn btn-glass">
-                        <i data-lucide="message-square"></i>
-                        Devis WhatsApp Direct
-                    </a>
-                </div>
+        <div class="hero-visual reveal">
+          <div class="logo-showcase">
+            <div class="glow-ring" aria-hidden="true"></div>
+            <img src="logo.jpg" alt="Emblème de SI Consulting SARL" class="floating-logo" width="640" height="640">
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="100">0</span><span class="stat-symbol">%</span>
-                        <span class="stat-label">Qualité Certifiée</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="24">0</span><span class="stat-symbol">/7</span>
-                        <span class="stat-label">Support & Logistique</span>
-                    </div>
-                    <div class="stat-
+    <section id="solutions" class="section" aria-labelledby="solutions-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">NOS PÔLES D’EXCELLENCE</span>
+          <h2 id="solutions-title">Des solutions industrielles <span class="gradient-text">adaptées à vos enjeux</span></h2>
+          <p>Des consommables et équipements sélectionnés pour répondre aux besoins des opérations minières, des installations de traitement d’eau et des professionnels de la détection.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="product-card tilt-card reveal" data-product="Charbon actif pour industrie minière">
+            <div class="card-glow amber" aria-hidden="true"></div>
+            <div class="card-icon amber"><i data-lucide="layers" aria-hidden="true"></i></div>
+            <h3>Charbon actif minier</h3>
+            <p>Charbon actif à base de coque de noix de coco, destiné aux circuits de récupération de l’or par adsorption (CIP, CIL et CIC).</p>
+            <ul class="feature-list">
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Faible taux d’attrition recherché</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Cinétique d’adsorption adaptée au procédé</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Granulométrie définie selon le besoin</li>
+            </ul>
+            <button class="btn-card select-product" type="button">Obtenir une cotation<i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+          </article>
+
+          <article class="product-card tilt-card reveal" data-product="Hydrafin - traitement des eaux">
+            <div class="card-glow emerald" aria-hidden="true"></div>
+            <div class="card-icon emerald"><i data-lucide="droplets" aria-hidden="true"></i></div>
+            <h3>Hydrafin • Traitement des eaux</h3>
+            <p>Solutions de filtration et de purification pour les applications d’eau potable et le traitement des eaux industrielles ou usées.</p>
+            <ul class="feature-list">
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Solutions adaptées à la qualité d’eau entrante</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Approche orientée performance hydraulique</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Accompagnement dans le choix des équipements</li>
+            </ul>
+            <button class="btn-card select-product" type="button">Obtenir une cotation<i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+          </article>
+
+          <article class="product-card tilt-card reveal" data-product="Détecteurs de métaux professionnels">
+            <div class="card-glow gold" aria-hidden="true"></div>
+            <div class="card-icon gold"><i data-lucide="radar" aria-hidden="true"></i></div>
+            <h3>Détecteurs de métaux</h3>
+            <p>Équipements de détection pour la prospection, la recherche aurifère et certaines applications de contrôle et de sécurité industrielle.</p>
+            <ul class="feature-list">
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Choix selon le terrain et l’application</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Options de discrimination selon les modèles</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Conseil avant sélection de l’équipement</li>
+            </ul>
+            <button class="btn-card select-product" type="button">Obtenir une cotation<i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="specifications" class="section section-alt" aria-labelledby="specifications-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">INFORMATIONS PRODUITS</span>
+          <h2 id="specifications-title">Fiches <span class="gradient-text">techniques</span></h2>
+          <p>Retrouvez les critères essentiels à préciser pour recevoir une recommandation et une fiche technique adaptée à votre projet.</p>
+        </div>
+
+        <div class="tabs-wrapper reveal">
+          <div class="tabs-header" role="tablist" aria-label="Familles de produits">
+            <button class="tab-btn active" id="tab-carbon" type="button" role="tab" aria-selected="true" aria-controls="panel-carbon" data-tab="panel-carbon">Charbon actif</button>
+            <button class="tab-btn" id="tab-water" type="button" role="tab" aria-selected="false" aria-controls="panel-water" data-tab="panel-water" tabindex="-1">Hydrafin / Eau</button>
+            <button class="tab-btn" id="tab-detectors" type="button" role="tab" aria-selected="false" aria-controls="panel-detectors" data-tab="panel-detectors" tabindex="-1">Détection</button>
+          </div>
+
+          <section class="tab-content active" id="panel-carbon" role="tabpanel" aria-labelledby="tab-carbon">
+            <div class="spec-grid">
+              <div class="spec-info">
+                <h3>Charbon actif pour récupération de l’or</h3>
+                <p>Le choix du charbon dépend notamment du schéma de traitement, de la granulométrie souhaitée et des conditions d’exploitation de l’installation.</p>
+                <div class="spec-table">
+                  <div class="spec-row"><span>Matière première</span><strong>Coque de noix de coco</strong></div>
+                  <div class="spec-row"><span>Applications</span><strong>CIP • CIL • CIC</strong></div>
+                  <div class="spec-row"><span>Critères de sélection</span><strong>Dureté, attrition, adsorption</strong></div>
+                  <div class="spec-row"><span>Granulométrie</span><strong>À définir selon le circuit</strong></div>
+                </div>
+              </div>
+              <aside class="spec-cta-card">
+                <i data-lucide="file-check-2" class="spec-big-icon amber" aria-hidden="true"></i>
+                <h4>Obtenir la fiche adaptée</h4>
+                <p>Indiquez votre procédé, la granulométrie et le volume prévisionnel pour recevoir les caractéristiques disponibles.</p>
+                <button class="btn btn-primary full-width select-product-direct" type="button" data-product="Charbon actif pour industrie minière">Demander la fiche</button>
+              </aside>
+            </div>
+          </section>
+
+          <section class="tab-content" id="panel-water" role="tabpanel" aria-labelledby="tab-water" hidden>
+            <div class="spec-grid">
+              <div class="spec-info">
+                <h3>Hydrafin • Filtration et traitement des eaux</h3>
+                <p>La solution se dimensionne à partir de l’analyse de l’eau, du débit nécessaire et de l’objectif de traitement.</p>
+                <div class="spec-table">
+                  <div class="spec-row"><span>Applications</span><strong>Eau potable et industrielle</strong></div>
+                  <div class="spec-row"><span>Traitement</span><strong>Filtration et purification</strong></div>
+                  <div class="spec-row"><span>Données de dimensionnement</span><strong>Débit et analyse d’eau</strong></div>
+                  <div class="spec-row"><span>Configuration</span><strong>Selon le projet</strong></div>
+                </div>
+              </div>
+              <aside class="spec-cta-card">
+                <i data-lucide="droplets" class="spec-big-icon emerald" aria-hidden="true"></i>
+                <h4>Étudier votre installation</h4>
+                <p>Transmettez le débit, la qualité d’eau disponible et l’usage final pour orienter le choix de traitement.</p>
+                <button class="btn btn-primary full-width select-product-direct" type="button" data-product="Hydrafin - traitement des eaux">Décrire mon besoin</button>
+              </aside>
+            </div>
+          </section>
+
+          <section class="tab-content" id="panel-detectors" role="tabpanel" aria-labelledby="tab-detectors" hidden>
+            <div class="spec-grid">
+              <div class="spec-info">
+                <h3>Détecteurs de métaux professionnels</h3>
+                <p>Le modèle approprié dépend du type de cible, de la minéralisation du sol, de la profondeur recherchée et des conditions de terrain.</p>
+                <div class="spec-table">
+                  <div class="spec-row"><span>Applications</span><strong>Prospection et détection</strong></div>
+                  <div class="spec-row"><span>Critères de choix</span><strong>Cible, sol, profondeur</strong></div>
+                  <div class="spec-row"><span>Fonctions possibles</span><strong>Discrimination selon modèle</strong></div>
+                  <div class="spec-row"><span>Accessoires</span><strong>Selon la configuration</strong></div>
+                </div>
+              </div>
+              <aside class="spec-cta-card">
+                <i data-lucide="scan-search" class="spec-big-icon gold" aria-hidden="true"></i>
+                <h4>Choisir le bon détecteur</h4>
+                <p>Précisez votre usage et le type de terrain afin de recevoir une orientation adaptée.</p>
+                <button class="btn btn-primary full-width select-product-direct" type="button" data-product="Détecteurs de métaux professionnels">Demander conseil</button>
+              </aside>
+            </div>
+          </section>
+          <p class="spec-disclaimer">Les caractéristiques détaillées, valeurs de performance et documents constructeurs sont communiqués selon la référence et la configuration retenues. Les critères ci-dessus sont indicatifs et ne remplacent pas une fiche fabricant.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="section" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="expertise-grid">
+          <div class="expertise-text reveal">
+            <span class="section-tag">ENGAGEMENT & FIABILITÉ</span>
+            <h2 id="expertise-title">Un partenaire à vos côtés <span class="gradient-text">sur le terrain</span></h2>
+            <p>SI Consulting SARL met l’accent sur le conseil, la sélection des solutions et le suivi commercial afin de faciliter vos approvisionnements et vos projets industriels.</p>
+
+            <div class="pillars">
+              <div class="pillar">
+                <div class="pillar-icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+                <div><h3>Exigence qualité</h3><p>Clarification des caractéristiques attendues et des documents techniques disponibles avant commande.</p></div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon"><i data-lucide="truck" aria-hidden="true"></i></div>
+                <div><h3>Coordination logistique</h3><p>Échange sur les volumes, la destination et les contraintes d’approvisionnement.</p></div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon"><i data-lucide="headset" aria-hidden="true"></i></div>
+                <div><h3>Accompagnement technique</h3><p>Un interlocuteur pour préciser votre application et identifier la solution appropriée.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="devis" class="quote-box reveal">
+            <h2>Demande de cotation</h2>
+            <p>Décrivez votre besoin. Votre demande sera préparée dans WhatsApp ou votre messagerie e-mail.</p>
+            <div class="direct-contacts">
+              <a class="contact-pill" href="tel:+22377194647"><i data-lucide="phone" aria-hidden="true"></i>+223 77 19 46 47</a>
+              <a class="contact-pill" href="mailto:info@siconsulting.com"><i data-lucide="mail" aria-hidden="true"></i>E-mail</a>
+            </div>
+
+            <form id="quoteForm">
+              <div class="form-group">
+                <label for="name">Nom / Société <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" autocomplete="name" required maxlength="120" placeholder="Ex. : Jean Kouassi – Société Minière">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Téléphone / WhatsApp <span aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required maxlength="40" placeholder="+225 00 00 00 00">
+                </div>
+                <div class="form-group">
+                  <label for="country">Pays <span aria-hidden="true">*</span></label>
+                  <input type="text" id="country" name="country" autocomplete="country-name" required maxlength="80" placeholder="Côte d’Ivoire, Mali, Burkina…">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="productSelect">Solution recherchée <span aria-hidden="true">*</span></label>
+                <select id="productSelect" name="product" required>
+                  <option value="Charbon actif pour industrie minière">Charbon actif minier</option>
+                  <option value="Hydrafin - traitement des eaux">Hydrafin – traitement des eaux</option>
+                  <option value="Détecteurs de métaux professionnels">Détecteurs de métaux</option>
+                  <option value="Autre demande / partenariat">Autre demande / partenariat</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="whatsappLine">Envoyer la demande vers le numéro WhatsApp</label>
+                <select id="whatsappLine" name="whatsappLine">
+                  <option value="22377194647">Mali : +223 77 19 46 47</option>
+                  <option value="4917662176721">Allemagne : +49 176 62176721</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Détails du projet (quantité, spécifications, délai…)</label>
+                <textarea id="message" name="message" rows="4" maxlength="2000" placeholder="Précisez vos besoins techniques, le volume estimé et le lieu de livraison…"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary full-width"><i data-lucide="send" aria-hidden="true"></i>Envoyer via WhatsApp</button>
+                <button type="button" id="emailSubmitBtn" class="btn btn-glass full-width"><i data-lucide="mail" aria-hidden="true"></i>Par e-mail</button>
+              </div>
+              <p class="form-note" id="formStatus" role="status" aria-live="polite">Les champs marqués d’un astérisque sont obligatoires. Aucun paiement n’est demandé sur ce formulaire.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip section-alt" aria-label="Contact direct">
+      <div class="container contact-strip-content">
+        <div><span class="section-tag">UN PROJET EN COURS ?</span><h2>Échangeons sur vos besoins.</h2></div>
+        <a href="mailto:info@siconsulting.com?subject=Demande%20d'information%20-%20SI%20Consulting" class="btn btn-primary">Contacter SI Consulting<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Logo SI Consulting SARL" width="42" height="42">
+        <div><strong>SI CONSULTING SARL</strong><p>Solutions minières, traitement des eaux et équipements industriels.</p></div>
+      </div>
+      <div class="footer-contact-info">
+        <a href="tel:+22377194647">+223 77 19 46 47</a><span aria-hidden="true">•</span>
+        <a href="mailto:info@siconsulting.com">info@siconsulting.com</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.siconsultingsarl.com" target="_blank" rel="noopener noreferrer">Site institutionnel</a>
+        <span aria-hidden="true">•</span>
+        <span>&copy; <span id="year"></span> SI Consulting SARL. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/22377194647?text=Bonjour%20SI%20Consulting%2C%20je%20souhaite%20obtenir%20des%20informations." target="_blank" rel="noopener noreferrer" aria-label="Contacter SI Consulting sur WhatsApp">
+    <i data-lucide="message-circle" aria-hidden="true"></i><span>WhatsApp</span>
+  </a>
+  <a class="back-to-top" href="#accueil" aria-label="Retour en haut de page"><i data-lucide="arrow-up" aria-hidden="true"></i></a>
+</body>
+</html>
