@@ -92,6 +92,10 @@ assert.ok(pages.every((page) => serviceWorker.includes("'./" + page + "'")), 'Se
 assert.ok(serviceWorker.includes('./offline.html'), 'Service worker must include an offline fallback.');
 assert.ok(serviceWorker.includes('./icon-192.svg') && serviceWorker.includes('./icon-512.svg'), 'Service worker must precache both app icon sizes.');
 assert.match(css, /\.hero-logo-frame img\{[^}]*object-fit:contain/, 'The animated hero logo must preserve its complete aspect ratio.');
+assert.ok(![...htmlByPage.values()].some((html) => /class="[^"]*(floating-chip|map-label|visual-orbit|status-dot|card-index|tech-number)/.test(html)), 'Decorative marker elements must be removed from every page.');
+assert.ok(!htmlByPage.get('index.html').includes('hero-glass-card') && !htmlByPage.get('index.html').includes('hero-card-caption'), 'The hero must not place captions or overlays on the logo.');
+assert.ok(!htmlByPage.get('index.html').includes('class="orbit'), 'Decorative orbit markers must be removed from the hero.');
+assert.match(css, /\.hero-logo-frame img\{[^}]*height:auto[^}]*object-fit:contain/, 'The hero logo must keep its natural dimensions without cropping.');
 assert.match(css, /\.brand-mark\{width:70px;height:70px/, 'The header brand mark must be displayed at the larger size.');
 assert.ok(script.includes("register('./service-worker.js', {scope:'./'})"), 'Service worker must use a GitHub Pages-safe relative scope.');
 assert.ok(script.includes("localStorage"), 'Language and theme preferences should persist locally.');
