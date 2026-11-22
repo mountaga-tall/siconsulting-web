@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     email:$('#email')?.value.trim() || '',
     phone:$('#phone')?.value.trim() || '',
     country:$('#country')?.value.trim() || '',
-    product:$('#productSelect')?.value || '',
+    product:$('#productSelect')?.selectedOptions?.[0]?.textContent.trim() || '',
     message:$('#message')?.value.trim() || ''
   });
   const buildMessage = (data) => [
@@ -214,8 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const url = 'https://wa.me/22377194647?text=' + message;
       const dictionary = translations[currentLanguage] || translations.fr;
       if (status) status.textContent = dictionary.whatsappOpening || 'Opening WhatsApp…';
-      const popup = window.open(url, '_blank', 'noopener,noreferrer');
-      if (!popup) window.location.assign(url);
+      const popup = window.open(url, '_blank');
+      if (popup) popup.opener = null;
+      else window.location.assign(url);
     });
   }
   emailButton?.addEventListener('click', () => {
