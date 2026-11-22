@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SI Consulting">
+  <link rel="apple-touch-icon" href="logo.jpg">
+  <meta name="description" content="SI Consulting SARL – solutions minières et industrielles.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SI Consulting SARL">
+  <meta property="og:description" content="Solutions minières et industrielles en Afrique et à l’international.">
+  <meta property="og:image" content="logo.jpg">
+  <title>SI Consulting SARL</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="contact" data-title-key="titleContact" data-description-key="descContact">
+
+<a class="skip-link" href="#main-content" data-i18n="skip">Aller au contenu principal</a>
+<div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="SI Consulting – Accueil">
+      <span class="brand-mark"><img src="logo.jpg" alt="" width="44" height="44"></span>
+      <span class="brand-copy"><strong>SI CONSULTING</strong><small>SARL · AFRIQUE & EUROPE</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+      <a href="index.html" data-nav="home" data-i18n="navHome">Accueil</a>
+      <a href="solutions.html" data-nav="solutions" data-i18n="navSolutions">Solutions</a>
+      <a href="fiches-techniques.html" data-nav="technology" data-i18n="navTechnology">Fiches techniques</a>
+      <a href="expertise.html" data-nav="company" data-i18n="navCompany">Expertise</a>
+      <a class="nav-contact" href="contact.html" data-nav="contact" data-i18n="navContact">Parlons de votre projet</a>
+    </nav>
+    <div class="header-tools">
+      <div class="language-switcher" role="group" aria-label="Choisir la langue">
+        <button type="button" data-lang="fr" aria-label="Français" title="Français">FR</button>
+        <button type="button" data-lang="en" aria-label="English" title="English">EN</button>
+        <button type="button" data-lang="de" aria-label="Deutsch" title="Deutsch">DE</button>
+      </div>
+      <button class="theme-toggle icon-button" id="themeToggle" type="button" aria-label="Activer le thème clair" title="Changer le thème"><i data-lucide="sun" aria-hidden="true"></i></button>
+      <button class="menu-toggle icon-button" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+<section class="page-hero"><div class="container page-hero-inner reveal"><span class="eyebrow" data-i18n="contactEyebrow">CONTACT & COTATION</span><h1 data-i18n="contactTitle">Parlons de votre prochain<br><span class="gradient-text">projet industriel.</span></h1><p data-i18n="contactLead">Partagez votre application, vos paramètres et vos volumes. Nous pourrons mieux orienter votre demande.</p><div class="breadcrumb"><a href="index.html" data-i18n="navHome">Accueil</a><i data-lucide="chevron-right"></i><span data-i18n="navContact">Contact</span></div></div></section>
+<section class="section"><div class="container contact-layout">
+  <aside class="contact-aside reveal"><span class="eyebrow" data-i18n="contactDirect">CONTACT DIRECT</span><h2 data-i18n="contactAsideTitle">Un premier échange, simplement.</h2><p data-i18n="contactAsideText">Choisissez le canal qui vous convient. Pour un devis précis, indiquez le produit recherché et les caractéristiques de votre projet.</p><a class="contact-method" href="tel:+22377194647"><span><i data-lucide="phone"></i></span><div><small data-i18n="contactMali">MALI</small><strong>+223 77 19 46 47</strong></div><i data-lucide="arrow-up-right"></i></a><a class="contact-method" href="tel:+4917662176721"><span><i data-lucide="phone"></i></span><div><small data-i18n="contactGermany">ALLEMAGNE</small><strong>+49 176 62176721</strong></div><i data-lucide="arrow-up-right"></i></a><a class="contact-method" href="mailto:info@siconsulting.com"><span><i data-lucide="mail"></i></span><div><small>E-MAIL</small><strong>info@siconsulting.com</strong></div><i data-lucide="arrow-up-right"></i></a><div class="contact-hours"><i data-lucide="globe-2"></i><span data-i18n="contactReach">Afrique de l’Ouest · Europe · International</span></div></aside>
+  <div class="contact-form-panel reveal"><div class="form-heading"><span class="eyebrow" data-i18n="quoteEyebrow">VOTRE DEMANDE</span><h2 data-i18n="quoteTitle">Recevoir une cotation</h2><p data-i18n="quoteText">Les champs marqués d’un astérisque sont obligatoires.</p></div>
+    <form id="quoteForm">
+      <div class="form-row"><div class="form-group"><label for="name" data-i18n="labelName">Nom / Société *</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Votre nom ou société" data-i18n-placeholder="placeholderName"></div><div class="form-group"><label for="email" data-i18n="labelEmail">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="nom@entreprise.com" data-i18n-placeholder="placeholderEmail"></div></div>
+      <div class="form-row"><div class="form-group"><label for="phone" data-i18n="labelPhone">Téléphone / WhatsApp *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+225 …"></div><div class="form-group"><label for="country" data-i18n="labelCountry">Pays *</label><input id="country" name="country" type="text" autocomplete="country-name" required maxlength="80" placeholder="Pays de votre projet" data-i18n-placeholder="placeholderCountry"></div></div>
+      <div class="form-group"><label for="productSelect" data-i18n="labelProduct">Solution recherchée *</label><select id="productSelect" name="product" required><option value="Charbon actif minier" data-i18n="optionCarbon">Charbon actif minier</option><option value="Hydrafin – traitement des eaux" data-i18n="optionHydrafin">Hydrafin – traitement des eaux</option><option value="Détecteurs de métaux" data-i18n="optionDetectors">Détecteurs de métaux</option><option value="Solution intégrée / Mine 360°" data-i18n="optionIntegrated">Solution intégrée / Mine 360°</option><option value="Autre demande" data-i18n="optionOther">Autre demande</option></select></div>
+      <div class="form-group"><label for="message" data-i18n="labelMessage">Décrivez votre besoin</label><textarea id="message" name="message" rows="5" maxlength="2500" placeholder="Application, débit ou quantité, spécifications, destination, délai…" data-i18n-placeholder="placeholderMessage"></textarea></div>
+      <div class="form-actions"><button class="btn btn-primary" type="submit"><span data-i18n="sendWhatsapp">Envoyer via WhatsApp</span><i data-lucide="arrow-up-right"></i></button><button class="btn btn-glass" type="button" id="emailSubmitBtn"><span data-i18n="sendEmail">Envoyer par e-mail</span><i data-lucide="mail"></i></button></div>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite" data-i18n="formPrivacy">Votre demande sera préparée dans WhatsApp ou votre messagerie. Aucune donnée n’est envoyée à un serveur par ce formulaire.</p>
+    </form>
+  </div>
+</div></section></main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html"><span class="brand-mark"><img src="logo.jpg" alt="" width="42" height="42"></span><span class="brand-copy"><strong>SI CONSULTING</strong><small>SARL · AFRIQUE & EUROPE</small></span></a>
+      <p data-i18n="footerTagline">Des solutions techniques pour des opérations minières et industrielles plus performantes.</p>
+    </div>
+    <div class="footer-col"><h3 data-i18n="footerExplore">Explorer</h3><a href="solutions.html" data-i18n="navSolutions">Solutions</a><a href="fiches-techniques.html" data-i18n="navTechnology">Fiches techniques</a><a href="expertise.html" data-i18n="navCompany">Expertise</a></div>
+    <div class="footer-col"><h3 data-i18n="footerContact">Contact</h3><a href="tel:+22377194647">+223 77 19 46 47</a><a href="tel:+4917662176721">+49 176 62176721</a><a href="mailto:info@siconsulting.com">info@siconsulting.com</a></div>
+    <div class="footer-col footer-news"><span class="eyebrow" data-i18n="footerGlobal">AFRIQUE · EUROPE · INTERNATIONAL</span><p data-i18n="footerNote">Parlons de vos besoins, de vos contraintes et de vos objectifs.</p><a class="text-link" href="contact.html" data-i18n="footerCta">Contacter SI Consulting ↗</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="year"></span> SI Consulting SARL</span><span data-i18n="footerRights">Tous droits réservés.</span><a href="https://www.siconsultingsarl.com" target="_blank" rel="noopener noreferrer">siconsultingsarl.com ↗</a></div>
+</footer>
+<a class="floating-contact" href="https://wa.me/22377194647?text=Bonjour%20SI%20Consulting" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp SI Consulting"><i data-lucide="message-circle" aria-hidden="true"></i><span>WhatsApp</span></a>
+<button class="back-to-top icon-button" id="backToTop" type="button" aria-label="Retour en haut"><i data-lucide="arrow-up" aria-hidden="true"></i></button>
+<div class="toast" id="siteToast" role="status" aria-live="polite"></div>
+<div class="install-card" id="installCard" hidden><span class="install-icon"><i data-lucide="download" aria-hidden="true"></i></span><span data-i18n="installPrompt">Installer SI Consulting sur cet appareil</span><button type="button" id="installButton" class="btn btn-small" data-i18n="installButton">Installer</button><button type="button" id="dismissInstall" class="icon-button" aria-label="Fermer"><i data-lucide="x" aria-hidden="true"></i></button></div>
+</body>
+</html>

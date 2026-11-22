@@ -1,0 +1,28 @@
+{
+  "id": "./",
+  "name": "SI Consulting SARL",
+  "short_name": "SI Consulting",
+  "description": "Solutions minières et industrielles en Afrique et à l’international.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080d16",
+  "theme_color": "#080d16",
+  "categories": ["business", "productivity", "industry"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logo.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
