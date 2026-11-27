@@ -110,7 +110,7 @@ assert.ok(script.includes("register('./service-worker.js', {scope:'./'})"), 'Ser
 assert.ok(script.includes("localStorage"), 'Language and theme preferences should persist locally.');
 assert.ok(script.includes("data-lang"), 'Language switching support is missing.');
 assert.ok(script.includes("themeToggle"), 'Theme switching support is missing.');
-assert.ok(script.includes('wa.me/22377194647'), 'WhatsApp quote handling is missing.');
+assert.ok(script.includes('wa.me/22377198080'), 'WhatsApp quote handling is missing.');
 assert.ok((css.match(/\{/g) || []).length === (css.match(/\}/g) || []).length, 'CSS braces are unbalanced.');
 
 console.log('Site validation passed: 5 pages, FR/EN/DE translations, theme toggle, mobile menu, quote form and PWA files.');
