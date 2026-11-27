@@ -7,7 +7,15 @@ const pages = [
   'solutions.html',
   'fiches-techniques.html',
   'expertise.html',
-  'contact.html'
+  'contact.html',
+  'partenaire.html',
+  'secteurs.html',
+  'services.html',
+  'actualites.html',
+  'commander.html',
+  'demander-fiche.html',
+  'mentions-legales.html',
+  'confidentialite.html'
 ];
 const assets = [
   'style.css',
@@ -19,7 +27,8 @@ const assets = [
   'icon-192.svg',
   'icon-512.svg',
   'offline.html',
-  'logo.jpg'
+  'logo.jpg',
+  'site-v15.css'
 ];
 
 for (const path of [...pages, ...assets]) {

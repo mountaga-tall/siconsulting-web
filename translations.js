@@ -1,6 +1,6 @@
 window.SI_TRANSLATIONS = {
 fr: {
-  skip:"Aller au contenu principal",navHome:"Accueil",navSolutions:"Solutions",navTechnology:"Fiches techniques",navCompany:"Expertise",navContact:"Parlons de votre projet",
+  skip:"Aller au contenu principal",navHome:"Accueil",navSolutions:"Solutions",navTechnology:"Fiches techniques",navCompany:"À propos",navContact:"Parlons de votre projet",
   footerTagline:"Des solutions techniques pour des opérations minières et industrielles plus performantes.",footerExplore:"Explorer",footerContact:"Contact",footerGlobal:"AFRIQUE · EUROPE · INTERNATIONAL",footerNote:"Parlons de vos besoins, de vos contraintes et de vos objectifs.",footerCta:"Contacter SI Consulting ↗",footerRights:"Tous droits réservés.",installPrompt:"Installer SI Consulting sur cet appareil",installButton:"Installer",
   titleHome:"SI Consulting SARL | Solutions minières et industrielles",descHome:"Solutions en récupération de l’or, traitement des eaux et équipements pour les opérations minières et industrielles.",
   titleSolutions:"Nos solutions | SI Consulting SARL",descSolutions:"Charbon actif minier, traitement des eaux Hydrafin et détecteurs de métaux professionnels.",
@@ -32,7 +32,7 @@ fr: {
   themeLight:"Activer le thème clair",themeDark:"Activer le thème sombre",menuOpen:"Ouvrir le menu",menuClose:"Fermer le menu",installReady:"Application prête à être installée.",installFail:"L’installation n’est pas disponible sur ce navigateur.",whatsappOpening:"Ouverture de WhatsApp avec votre demande…",emailOpening:"Ouverture de votre messagerie…",formError:"Vérifiez les informations obligatoires du formulaire.",offline:"Vous êtes hors connexion. Les pages déjà consultées restent disponibles.",backTop:"Retour en haut"
 },
 en: {
-  skip:"Skip to main content",navHome:"Home",navSolutions:"Solutions",navTechnology:"Technical sheets",navCompany:"Our expertise",navContact:"Discuss your project",
+  skip:"Skip to main content",navHome:"Home",navSolutions:"Solutions",navTechnology:"Technical sheets",navCompany:"About us",navContact:"Discuss your project",
   footerTagline:"Technical solutions for more effective mining and industrial operations.",footerExplore:"Explore",footerContact:"Contact",footerGlobal:"AFRICA · EUROPE · INTERNATIONAL",footerNote:"Tell us about your needs, constraints and objectives.",footerCta:"Contact SI Consulting ↗",footerRights:"All rights reserved.",installPrompt:"Install SI Consulting on this device",installButton:"Install",
   titleHome:"SI Consulting SARL | Mining & industrial solutions",descHome:"Solutions for gold recovery, water treatment and equipment for mining and industrial operations.",
   titleSolutions:"Our solutions | SI Consulting SARL",descSolutions:"Mining activated carbon, Hydrafin water treatment and professional metal detectors.",
@@ -64,7 +64,7 @@ en: {
   themeLight:"Switch to light theme",themeDark:"Switch to dark theme",menuOpen:"Open menu",menuClose:"Close menu",installReady:"App is ready to install.",installFail:"Installation is not available in this browser.",whatsappOpening:"Opening WhatsApp with your enquiry…",emailOpening:"Opening your email application…",formError:"Please check the required form fields.",offline:"You are offline. Pages you have already visited remain available.",backTop:"Back to top"
 },
 de: {
-  skip:"Zum Hauptinhalt springen",navHome:"Startseite",navSolutions:"Lösungen",navTechnology:"Technische Daten",navCompany:"Kompetenz",navContact:"Projekt besprechen",
+  skip:"Zum Hauptinhalt springen",navHome:"Startseite",navSolutions:"Lösungen",navTechnology:"Technische Daten",navCompany:"Über uns",navContact:"Projekt besprechen",
   footerTagline:"Technische Lösungen für leistungsfähigere Bergbau- und Industrieprozesse.",footerExplore:"Entdecken",footerContact:"Kontakt",footerGlobal:"AFRIKA · EUROPA · INTERNATIONAL",footerNote:"Sprechen wir über Ihren Bedarf, Ihre Rahmenbedingungen und Ihre Ziele.",footerCta:"SI Consulting kontaktieren ↗",footerRights:"Alle Rechte vorbehalten.",installPrompt:"SI Consulting auf diesem Gerät installieren",installButton:"Installieren",
   titleHome:"SI Consulting SARL | Bergbau- und Industrielösungen",descHome:"Lösungen für Goldgewinnung, Wasseraufbereitung und Ausrüstung für Bergbau- und Industriebetriebe.",
   titleSolutions:"Unsere Lösungen | SI Consulting SARL",descSolutions:"Aktivkohle für den Bergbau, Hydrafin-Wasseraufbereitung und professionelle Metalldetektoren.",
