@@ -1,4 +1,4 @@
-const CACHE_NAME = 'si-consulting-shell-v3';
+const CACHE_NAME = 'si-consulting-shell-v4';
 const APP_ROOT = new URL('./', self.registration.scope);
 const APP_FILES = [
   './',
@@ -7,6 +7,15 @@ const APP_FILES = [
   './fiches-techniques.html',
   './expertise.html',
   './contact.html',
+  './partenaire.html',
+  './secteurs.html',
+  './services.html',
+  './actualites.html',
+  './commander.html',
+  './demander-fiche.html',
+  './mentions-legales.html',
+  './confidentialite.html',
+  './site-v15.css',
   './style.css',
   './script.js',
   './translations.js',

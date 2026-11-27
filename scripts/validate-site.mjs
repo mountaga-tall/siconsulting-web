@@ -7,7 +7,15 @@ const pages = [
   'solutions.html',
   'fiches-techniques.html',
   'expertise.html',
-  'contact.html'
+  'contact.html',
+  'partenaire.html',
+  'secteurs.html',
+  'services.html',
+  'actualites.html',
+  'commander.html',
+  'demander-fiche.html',
+  'mentions-legales.html',
+  'confidentialite.html'
 ];
 const assets = [
   'style.css',
@@ -19,7 +27,8 @@ const assets = [
   'icon-192.svg',
   'icon-512.svg',
   'offline.html',
-  'logo.jpg'
+  'logo.jpg',
+  'site-v15.css'
 ];
 
 for (const path of [...pages, ...assets]) {
@@ -101,7 +110,7 @@ assert.ok(script.includes("register('./service-worker.js', {scope:'./'})"), 'Ser
 assert.ok(script.includes("localStorage"), 'Language and theme preferences should persist locally.');
 assert.ok(script.includes("data-lang"), 'Language switching support is missing.');
 assert.ok(script.includes("themeToggle"), 'Theme switching support is missing.');
-assert.ok(script.includes('wa.me/22377194647'), 'WhatsApp quote handling is missing.');
+assert.ok(script.includes('wa.me/22377198080'), 'WhatsApp quote handling is missing.');
 assert.ok((css.match(/\{/g) || []).length === (css.match(/\}/g) || []).length, 'CSS braces are unbalanced.');
 
 console.log('Site validation passed: 5 pages, FR/EN/DE translations, theme toggle, mobile menu, quote form and PWA files.');

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const browserLanguage = (navigator.language || 'fr').slice(0, 2).toLowerCase();
     return ['en', 'de'].includes(browserLanguage) ? browserLanguage : 'fr';
   };
-  let currentLanguage = ['fr', 'en', 'de'].includes(store.get('si-language')) ? store.get('si-language') : languageFromBrowser();
+  let currentLanguage = document.body.dataset.frOnly === 'true' ? 'fr' : (['fr', 'en', 'de'].includes(store.get('si-language')) ? store.get('si-language') : languageFromBrowser());
   const refreshIcons = () => {
     if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
   };
@@ -176,23 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = $('#quoteForm');
   const emailButton = $('#emailSubmitBtn');
   const status = $('#formStatus');
-  const formData = () => ({
-    name:$('#name')?.value.trim() || '',
-    email:$('#email')?.value.trim() || '',
-    phone:$('#phone')?.value.trim() || '',
-    country:$('#country')?.value.trim() || '',
-    product:$('#productSelect')?.selectedOptions?.[0]?.textContent.trim() || '',
-    message:$('#message')?.value.trim() || ''
-  });
-  const buildMessage = (data) => [
-    'SI CONSULTING SARL — REQUEST / DEMANDE / ANFRAGE',
-    'Name / Nom / Name: ' + data.name,
-    'Email: ' + data.email,
-    'Phone / Téléphone: ' + data.phone,
-    'Country / Pays / Land: ' + data.country,
-    'Product / Produit / Produkt: ' + data.product,
-    'Details / Détails / Details: ' + (data.message || '—')
-  ].join('\n');
+  const formData = () => Object.fromEntries([...new FormData(form).entries()].map(([key, value]) => [key, typeof File !== 'undefined' && value instanceof File ? value.name : String(value).trim()]));
+  const buildMessage = (data) => ['SI CONSULTING SARL — DEMANDE COMMERCIALE', ...Object.entries(data).map(([key, value]) => key + ': ' + (value || '—'))].join('\n');
   const validForm = () => {
     if (!form || !form.reportValidity()) {
       const dictionary = translations[currentLanguage] || translations.fr;
@@ -203,15 +188,20 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   if (form) {
     const query = new URLSearchParams(window.location.search);
-    const productMap = {carbon:'Charbon actif minier',water:'Hydrafin – traitement des eaux',detection:'Détecteurs de métaux'};
+    const productMap = {carbon:'Charbon actif minier',water:'Hydraffin – traitement des eaux',detection:'Détecteurs de métaux'};
     const select = $('#productSelect');
-    if (select && productMap[query.get('product')]) select.value = productMap[query.get('product')];
+    if (select) {
+      const requested = query.get('product') || query.get('produit');
+      const match = [...select.options].find((option) => option.value === requested || option.textContent.trim() === requested);
+      if (match) select.value = match.value;
+      else if (productMap[requested]) select.value = productMap[requested];
+    }
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!validForm()) return;
       const data = formData();
       const message = encodeURIComponent(buildMessage(data));
-      const url = 'https://wa.me/22377194647?text=' + message;
+      const url = 'https://wa.me/22377198080?text=' + message;
       const dictionary = translations[currentLanguage] || translations.fr;
       if (status) status.textContent = dictionary.whatsappOpening || 'Opening WhatsApp…';
       const popup = window.open(url, '_blank');
@@ -224,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = formData();
     const dictionary = translations[currentLanguage] || translations.fr;
     if (status) status.textContent = dictionary.emailOpening || 'Opening email…';
-    window.location.href = 'mailto:info@siconsulting.com?subject=' + encodeURIComponent('SI Consulting — ' + data.product) + '&body=' + encodeURIComponent(buildMessage(data));
+    window.location.href = 'mailto:ibrahim.sangare@siconsulting.com?subject=' + encodeURIComponent('SI Consulting — ' + (data.product || data.Produit || data['Référence demandée'] || 'Demande')) + '&body=' + encodeURIComponent(buildMessage(data));
   });
 
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
