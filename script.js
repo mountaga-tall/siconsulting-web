@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   if (form) {
     const query = new URLSearchParams(window.location.search);
-    const productMap = {carbon:'Charbon actif minier',water:'Hydrafin – traitement des eaux',detection:'Détecteurs de métaux'};
+    const productMap = {carbon:'Charbon actif minier',water:'Hydraffin – traitement des eaux',detection:'Détecteurs de métaux'};
     const select = $('#productSelect');
     if (select) {
       const requested = query.get('product') || query.get('produit');
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = formData();
     const dictionary = translations[currentLanguage] || translations.fr;
     if (status) status.textContent = dictionary.emailOpening || 'Opening email…';
-    window.location.href = 'mailto:ibrahim.sangare@siconsulting.com?subject=' + encodeURIComponent('SI Consulting — ' + data.product) + '&body=' + encodeURIComponent(buildMessage(data));
+    window.location.href = 'mailto:ibrahim.sangare@siconsulting.com?subject=' + encodeURIComponent('SI Consulting — ' + (data.product || data.Produit || data['Référence demandée'] || 'Demande')) + '&body=' + encodeURIComponent(buildMessage(data));
   });
 
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
